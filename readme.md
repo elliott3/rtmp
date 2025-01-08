@@ -56,13 +56,15 @@ kubectl apply -f nginx-deployment.yaml
 kubectl apply -f ffmpeg-service.yaml
 kubectl apply -f nginx-service.yaml
 
+# get the nginx-pod name
+kubectl get pods
 
-# kubectl get pods
-# get the nginx name
+# get the ip of nginx-pod
 kubectl describe pods <nginx-pod>
 
-# get the ip of nginx-pod like:
-# Node: kind-control-plane/<nginx-ip==>172.18.0.2>
+# <nginx-ip> looks like this ==> Node: kind-control-plane/xxx.xx.x.x>
 
 curl http://<nginx-ip>:30000/live/index.m3u8
+
+# you will see .m3u8 and .ts file
 
