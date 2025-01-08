@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ffmpeg
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ffmpeg
+  template:
+    metadata:
+      labels:
+        app: ffmpeg
+    spec:
+      containers:
+      - name: ffmpeg
+        image: jrottenberg/ffmpeg
+        command: ["bash", "-c"]
+        args:
+        - >
+          ffmpeg -i rtmp://liteavapp.qcloud.com/live/liteavdemoplayerstreamid
+          -c:v libx264 -preset veryfast -crf 28
+          -c:a aac -strict experimental -b:a 128k
+          -f hls -hls_time 4 -hls_list_size 10 -hls_flags delete_segments
+          /shared/index.m3u8
+        volumeMounts:
+        - name: hls-storage
+          mountPath: /shared
+      volumes:
+      - name: hls-storage
+        persistentVolumeClaim:
+          claimName: hls-pvc
