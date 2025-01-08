@@ -1,7 +1,3 @@
-notes:
-
-
-
 # ffmpeg and vlc are working locally
 
 kubectl apply -f pv-pvc.yaml
