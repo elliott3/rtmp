@@ -81,13 +81,18 @@ kubectl get pods
 ```
 
 # get the ip of nginx-pod
+<nginx-ip> looks like this: Node: kind-control-plane/xxx.xx.x.x
+
 ```bash
 kubectl describe pods <nginx-pod>
 ```
 
-# <nginx-ip> looks like this: Node: kind-control-plane/xxx.xx.x.x
+# test:
+open http://<nginx-ip>:30000/live/index.m3u8 in browser 
+
+or 
 ```bash
 curl http://<nginx-ip>:30000/live/index.m3u8
 ```
-# you will see .m3u8 and .ts file
+you will see .m3u8 and .ts file
 
