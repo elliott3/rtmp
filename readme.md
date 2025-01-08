@@ -49,11 +49,15 @@ minikube start
 ```
 
 # hard to copy to WSL, so I used a temp git repo
+```bash
 git clone https://github.com/elliott3/rtmp
 cd rtmp
-```bash
+```
 
 # change ffmpeg source in ffmpeg-deployment.yaml
+```bash 
+nano ffmpeg-deployment.yaml
+```
 
 # terminal
       ffmpeg -i rtmp://liteavapp.qcloud.com/live/liteavdemoplayerstreamid
@@ -62,6 +66,7 @@ cd rtmp
       -f hls -hls_time 4 -hls_list_size 10 -hls_flags delete_segments
       /shared/index.m3u8
 
+# apply k8s config
 ```bash
 kubectl apply -f pv-pvc.yaml
 kubectl apply -f ffmpeg-deployment.yaml
@@ -69,6 +74,7 @@ kubectl apply -f nginx-deployment.yaml
 kubectl apply -f ffmpeg-service.yaml
 kubectl apply -f nginx-service.yaml
 ```
+
 # get the nginx-pod name
 ```bash
 kubectl get pods
