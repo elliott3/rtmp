@@ -85,7 +85,7 @@ kubectl get pods
 kubectl describe pods <nginx-pod>
 ```
 
-# <nginx-ip> looks like this ==> Node: kind-control-plane/xxx.xx.x.x>
+# <nginx-ip> looks like this: Node: kind-control-plane/xxx.xx.x.x
 ```bash
 curl http://<nginx-ip>:30000/live/index.m3u8
 ```
