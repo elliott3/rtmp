@@ -59,7 +59,7 @@ cd rtmp
 nano ffmpeg-deployment.yaml
 ```
 
-# terminal
+# replace rtmp://xxx with your source
       ffmpeg -i rtmp://liteavapp.qcloud.com/live/liteavdemoplayerstreamid
       -c:v libx264 -preset veryfast -crf 28
       -c:a aac -strict experimental -b:a 128k
