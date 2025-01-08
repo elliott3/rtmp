@@ -58,7 +58,6 @@ kubectl apply -f nginx-service.yaml
 
 
 # kubectl get pods
-
 # get the nginx name
 kubectl describe pods <nginx-pod>
 
