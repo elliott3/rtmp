@@ -88,7 +88,7 @@ kubectl describe pods <nginx-pod>
 ```
 
 # test:
-open http://<nginx-ip>:30000/live/index.m3u8 in browser 
+open http://nginx-ip:30000/live/index.m3u8 in browser 
 
 or 
 ```bash
