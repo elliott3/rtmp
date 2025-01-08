@@ -1,12 +1,3 @@
-# ffmpeg and vlc are working locally
-
-kubectl apply -f pv-pvc.yaml
-kubectl apply -f ffmpeg-deployment.yaml\
-kubectl apply -f nginx-deployment.yaml\
-kubectl apply -f ffmpeg-service.yaml\
-kubectl apply -f nginx-service.yaml
-
-
 # remove current Ubuntu from windows (optional)
 wsl --unregister Ubuntu-22.04
 
