@@ -7,6 +7,7 @@ spec:
     storage: 1Gi
   accessModes:
     - ReadWriteMany
+  storageClassName: standard  # Add this line
   hostPath:
     path: /mnt/data
 ---
@@ -20,4 +21,5 @@ spec:
   resources:
     requests:
       storage: 1Gi
+  storageClassName: standard  # Add this line
   volumeName: hls-pv
