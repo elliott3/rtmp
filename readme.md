@@ -1,6 +1,7 @@
 # remove current Ubuntu from windows (optional)
 wsl --unregister Ubuntu-22.04
 
+'''
 sudo apt-get update
 sudo snap install kubectl --classic
 sudo apt-get install docker.io -y
@@ -8,17 +9,22 @@ sudo apt install curl git python3 python3-pip -y
 sudo apt  install ffmpeg -y
 sudo apt install timg -y
 sudo apt install vlc -y
+'''
 
 # install kind
+'''
 curl -Lo ./kind "https://kind.sigs.k8s.io/dl/v0.20.0/kind-linux-amd64"
 chmod +x kind
 sudo mv kind /usr/local/bin/
 sudo kind create cluster
 sudo snap install minikube
+'''
 
 # install minikube
+'''
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
+'''
 
 # install docker & add current user to it
 sudo apt update
