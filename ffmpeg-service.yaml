@@ -1,4 +1,4 @@
-apiVersion: v2
+apiVersion: v4
 kind: Service
 metadata:
   name: ffmpeg-service
